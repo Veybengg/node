@@ -2,34 +2,37 @@ const express = require("express");
 
 const app = express();
 
+const subject = "ITE354"
 
-const firstName = "Harvey Dave"
-const lastName = "de Gracia"
-const age = "20"
-const schoolemail = "hamo.degracia.swu@phinmaed.com"
+const exam = "P2"
 
-app.get('/firstname',(req,res)=>{   
-    res.status(200).send(firstName)
+const node = "NODEJS"
+
+
+app.get("/",(req,res)=>{
+    res.status(200).send("Hello Welcome")
 })
 
-app.get('/lastname',(req,res)=>{
-    res.status(200).send(lastName)
+app.get('/subject',(req,res)=>{   
+    res.status(200).send(subject)
 })
 
-app.get('/age',(req,res)=>{
-    res.status(200).send(age)
+app.get('/exam',(req,res)=>{
+    res.status(200).send(exam)
 })
 
-app.get('/schoolemail',(req,res)=>{
-    res.status(200).send(schoolemail)
+app.get('/NODE',(req,res)=>{
+    res.status(200).send(node)
 })
+
+
 
 app.get("/mydata",(req,res)=>{
     const data = {
-        "firstname":(firstName),
-        "lastname": (lastName),
-        "age":(age),
-        "school_email":(schoolemail),
+        subject,
+        "exam": (exam),
+        "node":(node),
+       
     }
     res.status(200).send(data)
 })
